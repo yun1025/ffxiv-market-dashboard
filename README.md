@@ -42,6 +42,7 @@ API 응답 변경에 컴포넌트가 영향받지 않도록 설계했습니다.
 
 ​```bash
 npm install
+
 npm run dev
 ​```
 

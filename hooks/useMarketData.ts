@@ -8,11 +8,12 @@ export function useMarketData(worlds: string[], itemId: number | null) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // 아이템을 아직 안 골랐으면 아무것도 안 함
     if (!itemId) {
       setData([]);
       return;
     }
+
+    const validItemId = itemId;
 
     let isCancelled = false;
 
@@ -21,8 +22,7 @@ export function useMarketData(worlds: string[], itemId: number | null) {
       setError(null);
 
       try {
-        const results = await getMultiWorldPrices(worlds, itemId);
-        // 컴포넌트가 이미 사라졌으면 상태 업데이트 안 함
+        const results = await getMultiWorldPrices(worlds, validItemId);
         if (!isCancelled) {
           setData(results);
         }

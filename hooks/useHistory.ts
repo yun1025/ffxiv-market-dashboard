@@ -13,6 +13,9 @@ export function useHistory(world: string | null, itemId: number | null) {
       return;
     }
 
+    const validWorld = world;
+    const validItemId = itemId;
+
     let isCancelled = false;
 
     async function fetchHistory() {
@@ -20,7 +23,7 @@ export function useHistory(world: string | null, itemId: number | null) {
       setError(null);
 
       try {
-        const entries = await getHistory(world, itemId);
+        const entries = await getHistory(validWorld, validItemId);
         if (!isCancelled) setHistory(entries);
       } catch (err) {
         if (!isCancelled) setError('거래 기록을 가져오지 못했어요.');

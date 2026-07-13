@@ -42,7 +42,7 @@ export function PriceHistoryChart({ history }: PriceHistoryChartProps) {
           stroke="#9ca3af"
           tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
         />
-        <Tooltip formatter={(value: number) => formatGil(value)} />
+        <Tooltip formatter={(value) => formatGil(Number(value))} />
         <Line type="monotone" dataKey="price" stroke="#3b82f6" strokeWidth={2} dot={false} />
       </LineChart>
     </ResponsiveContainer>

@@ -38,9 +38,9 @@ export function ServerCompareChart({ data }: ServerCompareChartProps) {
         <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
         <XAxis dataKey="world" fontSize={12} stroke="#9ca3af" />
         <YAxis fontSize={12} stroke="#9ca3af" />
-        <Tooltip formatter={(value: number) => formatGil(value)} />
+        <Tooltip formatter={(value) => formatGil(Number(value))} />
         <Bar dataKey="price" radius={[4, 4, 0, 0]}>
-          {chartData.map((entry, index) => (
+          {chartData.map((entry) => (
             <Cell
               key={entry.world}
               fill={entry.price === cheapestPrice ? '#3b82f6' : '#d1d5db'}

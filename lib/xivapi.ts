@@ -30,7 +30,7 @@ export async function searchItems(query: string): Promise<XivItem[]> {
     rowId: result.row_id,
     name: result.fields.Name,
     iconUrl: buildIconUrl(result.fields.Icon.path),
-    levelItem: result.fields.LevelItem,
+    levelItem: result.fields.LevelItem?.value,
   }));
 }
 
@@ -52,7 +52,7 @@ export async function getItem(rowId: number): Promise<XivItem> {
     rowId: data.row_id,
     name: data.fields.Name,
     iconUrl: buildIconUrl(data.fields.Icon.path),
-    levelItem: data.fields.LevelItem,
+    levelItem: data.fields.LevelItem?.value,
     description: data.fields.Description,
   };
 }

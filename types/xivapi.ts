@@ -12,15 +12,20 @@ export interface XivApiSearchResponse {
 
 export interface XivApiSearchResult {
   score: number;
-  sheet: string;           // "Item" 같은 카테고리 이름
+  sheet: string;
   row_id: number;
   fields: {
     Name: string;
     Icon: {
       id: number;
-      path: string;        // 아이콘 이미지 경로
+      path: string;
+      path_hr1?: string;
     };
-    LevelItem?: number;
+    LevelItem?: {
+      value: number;
+      sheet: string;
+      row_id: number;
+    };
     Description?: string;
   };
 }

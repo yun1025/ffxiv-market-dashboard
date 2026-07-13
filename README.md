@@ -2,6 +2,8 @@
 
 파이널판타지14 글로벌 서버의 거래 게시판 시세를 검색하고 비교하는 웹 대시보드입니다.
 
+Live Demo : https://ffxiv-market-dashboard-orf52qtk8-yun24.vercel.app/search
+
 ## 왜 만들었나요
 
 파이널판타지14를 플레이하며 서버별 시세를 비교할 도구가 필요하다고 느꼈고,
